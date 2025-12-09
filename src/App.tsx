@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import PersonaSection from './components/PersonaSection'
+import ProblemSection from './components/ProblemSection'
 import SolutionSection from './components/SolutionSection'
 import FutureExpansion from './components/FutureExpansion'
 import Reception from './components/Reception'
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Hero />
         <PersonaSection />
+        <ProblemSection />
         <SolutionSection />
         <FutureExpansion />
         <Reception />

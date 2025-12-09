@@ -37,6 +37,10 @@
   --blur-backdrop: blur(12px);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Segoe UI', 
                'Helvetica Neue', Arial, sans-serif;
@@ -102,21 +106,41 @@ p {
 
 .btn-secondary {
   background: transparent;
-  color: var(--deep-grey-purple);
-  border: 2px solid var(--deep-grey-purple);
+  color: white;
+  border: 2px solid white;
 }
 
 .btn-secondary:hover {
-  background: var(--deep-grey-purple);
-  color: white;
+  background: white;
+  color: var(--deep-grey-purple);
 }
 
-/* ========== SECTIONS ========== */
+/* ========== SECTIONS - FULL WIDTH ========== */
 section {
-  padding: var(--space-xl) var(--space-sm);
+  width: 100%;
+  padding: var(--space-xl) 0;
+}
+
+/* Section Inner Container - Constrained Width with Padding */
+section > *:not(.hero-background):not(.hero-content-wrapper) {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+/* For sections that have direct children needing full width */
+.persona-container,
+.solution-container,
+.expansion-container,
+.reception-container,
+.cta-container,
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -151,14 +175,47 @@ section {
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  section > *:not(.hero-background):not(.hero-content-wrapper),
+  .persona-container,
+  .solution-container,
+  .expansion-container,
+  .reception-container,
+  .cta-container,
+  .footer-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --font-title: 34px;
     --font-section-header: 22px;
     --font-body: 16px;
+    --space-xl: 48px;
   }
   
   section {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-lg) 0;
+  }
+  
+  section > *:not(.hero-background):not(.hero-content-wrapper),
+  .persona-container,
+  .solution-container,
+  .expansion-container,
+  .reception-container,
+  .cta-container,
+  .footer-container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-title: 28px;
+    --font-section-header: 20px;
+    --font-body: 15px;
   }
 }

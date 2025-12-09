@@ -1,29 +1,25 @@
 /* ========================================
    COMPONENTS.CSS - ALL COMPONENT STYLES
+   FULL WIDTH SECTIONS WITH CONTAINED CONTENT
    ======================================== */
 
 /* ========== SECTIONS BASE ========== */
 section {
   width: 100%;
-  padding: var(--space-xl) var(--space-sm);
-}
-
-section > * {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: var(--space-xl) 0;
 }
 
 /* ========== PERSONA SECTION ========== */
 .persona-section {
   background: #F3E8FA;
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
 .persona-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
 }
 
 .persona-card {
@@ -107,13 +103,14 @@ section > * {
 /* ========== SOLUTION SECTION ========== */
 .solution-section {
   background: white;
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
 .solution-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
 }
 
 .section-title {
@@ -172,13 +169,14 @@ section > * {
 /* ========== FUTURE EXPANSION ========== */
 .future-expansion {
   background: linear-gradient(135deg, #E8D5F0 0%, #D9B7E7 100%);
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
 .expansion-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
 }
 
 .expansion-grid {
@@ -230,13 +228,14 @@ section > * {
 /* ========== RECEPTION ========== */
 .reception {
   background: white;
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
 .reception-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
 }
 
 .reception-content {
@@ -273,13 +272,14 @@ section > * {
 /* ========== CALL TO ACTION ========== */
 .cta-section {
   background: var(--soft-white);
-  padding: var(--space-xl) var(--space-sm);
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
 .cta-container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
   text-align: center;
 }
 
@@ -386,13 +386,14 @@ section > * {
 /* ========== FOOTER ========== */
 .footer {
   background: #EFE1F5;
-  padding: var(--space-lg) var(--space-sm) var(--space-sm);
+  padding: var(--space-lg) 0 var(--space-sm);
   width: 100%;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-sm);
 }
 
 .footer-content {
@@ -481,13 +482,36 @@ section > * {
 }
 
 /* ========== RESPONSIVE STYLES ========== */
-@media (max-width: 968px) {
-  .solution-grid {
-    grid-template-columns: 1fr;
-  }
 
+/* Laptop / Small Desktop (1024px) */
+@media (max-width: 1024px) {
+  .persona-container,
+  .solution-container,
+  .expansion-container,
+  .reception-container,
+  .cta-container,
+  .footer-container {
+    padding: 0 var(--space-md);
+  }
+  
   .expansion-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .persona-container,
+  .solution-container,
+  .expansion-container,
+  .reception-container,
+  .cta-container,
+  .footer-container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .solution-grid {
+    grid-template-columns: 1fr;
   }
 
   .persona-card {
@@ -509,8 +533,18 @@ section > * {
   }
 }
 
+/* Mobile (576px) */
 @media (max-width: 576px) {
   .expansion-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+  }
+  
+  .solution-card,
+  .expansion-card {
+    padding: var(--space-sm);
   }
 }
