@@ -8,7 +8,7 @@ const CallToAction = () => {
 
   return (
     <>
-      <section className="cta-section">
+      <section className="cta-section" id="cta">
         <div className="cta-container">
           <h2 className="cta-title">
             {language === 'DE' 
@@ -46,7 +46,7 @@ const CallToAction = () => {
             </div>
             <div className="modal-body">
               <iframe 
-                src="YOUR_GOOGLE_FORM_URL_HERE"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeMmAxpJ00cxwj52SpC5JbClUZTHfsoIo7gXpFsYgWr2y6COg/viewform?embedded=true"
                 width="100%" 
                 height="100%" 
                 frameBorder="0" 

@@ -1,12 +1,17 @@
-/* HERO SECTION - CLEAN TEXT ON IMAGE */
+/* HERO SECTION - FULL SCREEN WIDTH */
 
 .hero {
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   padding-top: 72px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .hero-background {
@@ -35,6 +40,7 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .hero-content {
