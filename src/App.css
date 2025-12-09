@@ -1,42 +1,159 @@
-#root {
-  max-width: 1280px;
+/* MITCARE LANDING PAGE - APPLE HIG COMPLIANT STYLES */
+
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-lavender: #D9B7E7;
+  --deep-grey-purple: #5A4A66;
+  --soft-white: #FAFAFA;
+  --neutral-grey: #DCDCDC;
+  --accent-peach: #FFE5D9;
+  --accent-yellow: #FFF9B8;
+  --accent-green: #B8F3D8;
+  --accent-pink: #FFD6E8;
+  
+  /* Typography Scale (Apple HIG) */
+  --font-title: 40px;
+  --font-section-header: 26px;
+  --font-body: 18px;
+  --font-label: 14px;
+  
+  /* Spacing (8-point grid) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 80px;
+  
+  /* Shadows & Effects */
+  --shadow-soft: 0 4px 16px rgba(90, 74, 102, 0.08);
+  --shadow-medium: 0 8px 24px rgba(90, 74, 102, 0.12);
+  --blur-backdrop: blur(12px);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Segoe UI', 
+               'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-body);
+  line-height: 1.6;
+  color: var(--deep-grey-purple);
+  background: var(--soft-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1 {
+  font-size: var(--font-title);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--font-section-header);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  font-size: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ========== BUTTONS (Apple HIG) ========== */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: var(--font-body);
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--deep-grey-purple);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--deep-grey-purple);
+  border: 2px solid var(--deep-grey-purple);
+}
+
+.btn-secondary:hover {
+  background: var(--deep-grey-purple);
+  color: white;
+}
+
+/* ========== SECTIONS ========== */
+section {
+  padding: var(--space-xl) var(--space-sm);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-.card {
-  padding: 2em;
+.fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.read-the-docs {
-  color: #888;
+.slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  :root {
+    --font-title: 34px;
+    --font-section-header: 22px;
+    --font-body: 16px;
+  }
+  
+  section {
+    padding: var(--space-lg) var(--space-sm);
+  }
 }
