@@ -1,12 +1,19 @@
-/* ========================================
-   COMPONENTS.CSS - ALL COMPONENT STYLES
-   FULL WIDTH SECTIONS WITH CONTAINED CONTENT
-   ======================================== */
+/* =============================================
+   SECTIONS.CSS - ALL SECTION STYLES
+   Safe to modify and improve
+   ============================================= */
 
-/* ========== SECTIONS BASE ========== */
+/* ========== BASE SECTION STYLES ========== */
 section {
   width: 100%;
   padding: var(--space-xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: var(--font-section-header);
+  color: var(--deep-grey-purple);
+  margin-bottom: var(--space-lg);
 }
 
 /* ========== PERSONA SECTION ========== */
@@ -44,18 +51,6 @@ section {
   background: var(--neutral-grey);
   border-radius: 16px;
   object-fit: cover;
-}
-
-.persona-image .image-placeholder {
-  width: 100%;
-  aspect-ratio: 3/4;
-  background: var(--neutral-grey);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--deep-grey-purple);
-  font-size: var(--font-label);
 }
 
 .persona-content {
@@ -100,6 +95,84 @@ section {
   line-height: 1.7;
 }
 
+/* ========== PROBLEM SECTION ========== */
+.problem-section-final {
+  background: white;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.problem-container-final {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.problem-title-final {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--deep-grey-purple);
+  margin-bottom: 64px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--primary-lavender);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.problem-three-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  gap: 48px !important;
+  margin-top: 64px;
+}
+
+.problem-box {
+  background: #F3E8FA;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 8px rgba(90, 74, 102, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.problem-box-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--deep-grey-purple);
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.problem-box-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problem-box-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--deep-grey-purple);
+  padding-left: 20px;
+  position: relative;
+}
+
+.problem-box-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-lavender);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
 /* ========== SOLUTION SECTION ========== */
 .solution-section {
   background: white;
@@ -111,13 +184,6 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-sm);
-}
-
-.section-title {
-  text-align: center;
-  font-size: var(--font-section-header);
-  color: var(--deep-grey-purple);
-  margin-bottom: var(--space-lg);
 }
 
 .solution-grid {
@@ -257,16 +323,19 @@ section {
   color: var(--deep-grey-purple);
 }
 
-.reception-image .image-placeholder {
+.reception-image {
   width: 100%;
   aspect-ratio: 1;
-  background: var(--neutral-grey);
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-label);
-  color: var(--deep-grey-purple);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(90, 74, 102, 0.1);
+}
+
+.reception-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ========== CALL TO ACTION ========== */
@@ -481,7 +550,9 @@ section {
   margin: 4px 0;
 }
 
-/* ========== RESPONSIVE STYLES ========== */
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
 
 /* Laptop / Small Desktop (1024px) */
 @media (max-width: 1024px) {
@@ -501,6 +572,10 @@ section {
 
 /* Tablet (768px) */
 @media (max-width: 768px) {
+  section {
+    padding: var(--space-lg) 0;
+  }
+  
   .persona-container,
   .solution-container,
   .expansion-container,
@@ -531,6 +606,20 @@ section {
     height: 100vh;
     border-radius: 0;
   }
+  
+  .problem-three-columns {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .problem-title-final {
+    font-size: 28px;
+    margin-bottom: 48px;
+  }
+
+  .problem-box-title {
+    font-size: 20px;
+  }
 }
 
 /* Mobile (576px) */
@@ -547,9 +636,4 @@ section {
   .expansion-card {
     padding: var(--space-sm);
   }
-}
-.problem-three-columns {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr !important;
-  gap: 32px !important;
 }

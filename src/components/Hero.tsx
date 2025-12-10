@@ -1,6 +1,5 @@
 import { useLanguage } from '../context/LanguageContext'
 import { motion } from 'framer-motion'
-import './Hero.css'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },

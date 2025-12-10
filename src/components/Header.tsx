@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
-import './Header.css'
 
 const Header = () => {
   const [isInHero, setIsInHero] = useState(true)

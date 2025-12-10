@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-import './components.css'
 
 const CallToAction = () => {
   const { language } = useLanguage()

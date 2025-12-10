@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext'
-import './components.css'
 
 const FutureExpansion = () => {
   const { language } = useLanguage()

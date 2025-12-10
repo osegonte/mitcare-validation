@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext'
-import './components.css'
 
 const PersonaSection = () => {
   const { language } = useLanguage()
