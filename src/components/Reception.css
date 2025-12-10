@@ -1,0 +1,55 @@
+/* ========== RECEPTION - FIXED IMAGE DISPLAY ========== */
+.reception {
+  background: white;
+  padding: var(--space-xl) 0;
+  width: 100%;
+}
+
+.reception-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.reception-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.reception-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.reception-text p {
+  font-size: var(--font-body);
+  line-height: 1.7;
+  color: var(--deep-grey-purple);
+}
+
+/* FIXED - Display actual image */
+.reception-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(90, 74, 102, 0.1);
+}
+
+.reception-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .reception-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}

@@ -28,9 +28,11 @@ const Reception = () => {
           </div>
           
           <div className="reception-image">
-            <div className="image-placeholder">
-              <span>reception-image.jpg</span>
-            </div>
+            <img 
+              src="/images/reception-image.jpg" 
+              alt={language === 'DE' ? 'Wie MitCare wirken soll' : 'How MitCare Should Feel'}
+              className="reception-img"
+            />
           </div>
         </div>
       </div>

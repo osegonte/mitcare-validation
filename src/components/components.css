@@ -548,3 +548,8 @@ section {
     padding: var(--space-sm);
   }
 }
+.problem-three-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  gap: 32px !important;
+}
