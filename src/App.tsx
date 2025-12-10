@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import PersonaSection from './components/PersonaSection'
 import ProblemSection from './components/ProblemSection'
+import HowMitCareSolves from './components/HowMitCareSolves'
 import SolutionSection from './components/SolutionSection'
 import FutureExpansion from './components/FutureExpansion'
 import Reception from './components/Reception'
@@ -18,6 +19,7 @@ function App() {
         <Hero />
         <PersonaSection />
         <ProblemSection />
+        <HowMitCareSolves />  {/* NEW SECTION - Right after problems! */}
         <SolutionSection />
         <FutureExpansion />
         <Reception />
